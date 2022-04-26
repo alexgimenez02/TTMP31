@@ -130,3 +130,6 @@ dmypy.json
 
 #vscode extras
 .vscode
+
+#jem.cfg
+JEM.cfg
