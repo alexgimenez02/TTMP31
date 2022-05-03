@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Cache files
+*.idea
+*jythonMusic/.jython_cache
+
 # Distribution / packaging
 .Python
 build/
