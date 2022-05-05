@@ -15,7 +15,7 @@ With the integrated IDE JEM.jar already opened, open the file named main.py and 
 When the file is executed, an interface should be displayed.
 
 ## Requirements 
-Compatible operating ssystems: Windows, Linux, Mac
+Compatible operating systems: Windows, Linux, Mac
 
 Python 3.8 or higher
 
