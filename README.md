@@ -23,3 +23,5 @@ Java SE Development Kit – Java 8 version
 
 ## About us
 We are a group of students at Pompeu Fabra University passionate about music. The main purpose is to teach and enhance user experience with the software composition of music while we learn more about music and composition.
+
+Project made using the JythonMusic framework, for more information visit the URL: https://jythonmusic.me/ 
