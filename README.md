@@ -16,7 +16,9 @@ When the file is executed, an interface should be displayed.
 
 ## Requirements 
 OS: Windows, Linux, Mac
+
 Python 3.8 or higher
+
 Java SE Development Kit – Java 8 version
 
 ## About us
