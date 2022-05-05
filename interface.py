@@ -46,3 +46,8 @@ pianoCheck.check()
 pianoCheck = Checkbox("Complementary Guitar")
 d.add(pianoCheck, 50, 430)
 pianoCheck.check()
+
+def downloadFunc():
+   print("Downloading...")
+downloadBut = Button("Download song", downloadFunc)
+d.add(downloadBut, 610,530)
