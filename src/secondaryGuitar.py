@@ -4,7 +4,7 @@ class secondaryGuitar:
     name = ""
     bpm = 0
     score = None
-    part = Part(24)  #GUITAR, NYLHON_GUITAR
+    part = Part(27)  #Steel Guitar
    
     def __init__(self, name='Second Guitar', bpm=60):
         self.name = name
@@ -38,6 +38,7 @@ class secondaryGuitar:
             self.score.addPart(self.part)
 
     def write_mdi(self,path):
+        self.create_score()
         Write.midi(self.score,path)
         
     def playTheme(self):

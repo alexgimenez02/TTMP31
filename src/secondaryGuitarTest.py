@@ -4,10 +4,10 @@ from music import *
 if "__main__" in __name__:
    
 
-   instr = secondaryGuitar("Guitar test", 200)
+   instr = secondaryGuitar("Guitar test", 150)
     
-   pitches = [C4, E4, F2, [B2, C2, D4]]
-   duration = [QN, QN, QN, WN]
+   pitches = [E5, D5, E5, D5, E5, B4]
+   duration = [QN, QN, QN, QN, QN, QN]
    
    instr.addToPhase(pitches,duration)
    
