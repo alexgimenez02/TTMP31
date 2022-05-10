@@ -137,3 +137,5 @@ dmypy.json
 
 #jem.cfg
 JEM.cfg
+jythonMusic/JEM.cfg
+*.cfg
