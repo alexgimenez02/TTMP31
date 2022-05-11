@@ -1,12 +1,12 @@
 from music import *
 
-class secondaryGuitar:
+class acousticGuitar:
     name = ""
     bpm = 0
     score = None
-    part = Part(27)  #Steel Guitar
+    part = Part(STEEL_GUITAR)  #Steel Guitar
    
-    def __init__(self, name='Second Guitar', bpm=60):
+    def __init__(self, name='Acoustic Guitar', bpm=60):
         self.name = name
         self.score = Score(name,bpm)
    
