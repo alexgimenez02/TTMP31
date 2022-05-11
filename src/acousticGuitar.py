@@ -4,7 +4,8 @@ class acousticGuitar:
     name = ""
     bpm = 0
     score = None
-    part = Part(STEEL_GUITAR)  #Steel Guitar
+    instrument = STEEL_GUITAR
+    part = Part(instrument)  #Steel Guitar
    
     def __init__(self, name='Acoustic Guitar', bpm=60):
         self.name = name
@@ -16,7 +17,9 @@ class acousticGuitar:
         '''
         phrase = Phrase()
         phrase.addNote(note)
-        Play.midi(part.addPhrase(phrase))
+        prt = Part(self.instrument)
+        prt.addPhrase(phrase)
+        Play.midi(prt)
         
 
     def addToPhase(self,pitches,duration): 
@@ -31,7 +34,8 @@ class acousticGuitar:
         '''
         changes the tempo of the theme
         '''
-        pass
+        self.score.setTempo(tempo)
+        
     
     def create_score(self):
         if self.part.getSize() > 0:
