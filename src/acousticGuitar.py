@@ -22,13 +22,14 @@ class acousticGuitar:
         Play.midi(prt)
         
 
-    def addToPhase(self,pitches,duration): 
+    def addToPhase(self,pitches,duration, dynamics): 
         '''
         adds the notes (pitches) and the duration of them in the theme
         '''
         phrase = Phrase()
-        phrase.addNoteList(pitches,duration)
+        phrase.addNoteList(pitches,duration,dynamics=dynamics)
         self.part.addPhrase(phrase)
+        
 
     def changeTempo(self,tempo):
         '''

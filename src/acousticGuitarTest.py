@@ -2,11 +2,34 @@ from acousticGuitar import acousticGuitar
 from music import *
 import time
 
+'''
+TODO:
+
+Search how to add a natural sign to each note on the composition
+Loop both chords into the fully extend of the composition
+Add the final tempo (?)
+
+'''
+
+
 if "__main__" in __name__:
    
-
-   instr = acousticGuitar("Guitar test", 60)
    
+   instr = acousticGuitar("Guitar test", 120)
+   
+   #Notes
+   firstchord = [[A3,E4,A4,C5,E5]]*5
+   durationfirstchord = [QN,QN,QN,EN,EN]
+   dynamicsfirstchord = [MP] * 5
+   
+   secondchord = [[G3,B3,E4,G4]] * 5
+   durationsecondchord = [QN,QN,QN,EN,EN]
+   dynamicssecondchord = [MP] * 5
+
+   instr.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
+   instr.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
+   
+   instr.playTheme()
 '''
 fur elise example with STEEL_GUITAR
    #Notes 
@@ -28,7 +51,7 @@ fur elise example with STEEL_GUITAR
    #Play the theme
    instr.playTheme()
 '''   
-    instr.playNote(Note(C4, QN))
+   # instr.playNote(Note(C4, QN))
    
 
    
