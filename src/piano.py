@@ -12,17 +12,19 @@ class Piano:
         self.name = name
         self.score = Score(name, bpm)
 
-    def addPhrase(self, pitches, duration, hand="r"):
+    def addPhrase(self, pitches, duration, n_repetitions, hand="r"):
         phrase = Phrase()
         phrase.addNoteList(pitches, duration)
+        if n_repetitions > 0:
+            Mod.repeat(phrase, n_repetitions)  # repeat first phrase n times
         if hand == "l":
             self.l_hand_part.addPhrase(phrase)
         elif hand == "r":
             self.r_hand_part.addPhrase(phrase)
 
-    def addPhraseTwoHands(self, l_pitches, l_duration, r_pitches, r_duration):
-        self.addPhrase(l_pitches, l_duration, "l")
-        self.addPhrase(r_pitches, r_duration, "r")
+    def addPhraseTwoHands(self, l_pitches, l_duration, r_pitches, r_duration, n_repetitions=0):
+        self.addPhrase(l_pitches, l_duration, n_repetitions, "l")
+        self.addPhrase(r_pitches, r_duration, n_repetitions, "r")
 
     def changeTempo(self, tempo):
         pass
