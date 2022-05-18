@@ -13,10 +13,10 @@ def test():
     bassDurations2 = [EN, EN, HN, QN, EN, EN, HN, QN, EN,EN, HN, QN]
     bassDurations3 = [EN, EN, QN, QN, HN, HN]
 
-    bass.addPhrase(bassPitches1, bassDurations1)  
-    bass.addPhrase(bassPitches2, bassDurations2)
-    bass.addPhrase(bassPitches3, bassDurations3)
+    bass.addToPhase(bassPitches1, bassDurations1)  
+    bass.addToPhase(bassPitches2, bassDurations2)
+    bass.addToPhase(bassPitches3, bassDurations3)
 
-    bass.play_theme()
+    bass.playTheme()
 
 test()
