@@ -3,7 +3,7 @@ from music import *
 
 
 def test():
-    piano = Piano("Piano test", 70)
+    piano = Piano("Piano test", 120)
 
     r_pitches = [[A3, C4, E4], [A3, C4, E4], [A3, C4, E4],     [B3, E4, G4], [B3, E4, G4], [B3, E4, G4]]
     r_durations = [DQN,            DQN,            QN,              DQN,          DQN,           QN]

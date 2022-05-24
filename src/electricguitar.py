@@ -4,11 +4,12 @@ class electricGuitar:
     name = ""
     bpm = 0
     score = None
-    part = Part(ELECTRIC_GUITAR)  #ELECTRIC GUITAR
+    part = None
    
-    def __init__(self, name = 'Electric Guitar', bpm = 60):
+    def __init__(self, name = 'Electric Guitar', bpm = 60, part_num=0):
         self.name = name
         self.score = Score(name, bpm)
+        self.part = Part(ELECTRIC_GUITAR, part_num)  #ELECTRIC GUITAR
    
     def playNote(self, note):
         '''

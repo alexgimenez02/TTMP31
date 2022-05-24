@@ -5,12 +5,15 @@ class Piano:
     name = ""
     bpm = 0
     score = None
-    l_hand_part = Part(PIANO, 0)
-    r_hand_part = Part(PIANO, 1)
+    l_hand_part = None
+    r_hand_part = None
 
-    def __init__(self, name='Piano', bpm=60):
+    def __init__(self, name='Piano', bpm=60, part_num=[0, 1]):
         self.name = name
         self.score = Score(name, bpm)
+        self.l_hand_part = Part(PIANO, part_num[0])
+        self.r_hand_part = Part(PIANO, part_num[1])
+
 
     def addPhrase(self, pitches, duration, n_repetitions, hand="r"):
         phrase = Phrase()
