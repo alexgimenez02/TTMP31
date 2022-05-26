@@ -18,16 +18,21 @@ if "__main__" in __name__:
    instr = acousticGuitar("Guitar test", 120)
    
    #Notes
+   
    firstchord = [[AF3,EF4,AF4,CF5,EF5]]*5
    durationfirstchord = [QN,QN,QN,EN,EN]
    dynamicsfirstchord = [MP] * 5
-   
    secondchord = [[GF3,BF3,EF4,GF4]] * 5
    durationsecondchord = [QN,QN,QN,EN,EN]
    dynamicssecondchord = [MP] * 5
-
-   instr.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
-   instr.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
+   for i in range(32):
+      instr.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
+      instr.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
+   
+   lastchord = [[AF3,EF4,AF4,CF5,EF5],REST]
+   duration = [HN]*2
+   dynamics = [MP]*2
+   instr.addToPhase(lastchord,duration,dynamics)
    
    instr.playTheme()
 '''
