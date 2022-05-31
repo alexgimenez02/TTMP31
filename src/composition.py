@@ -23,16 +23,16 @@ def test():
    drum.addPhrase(crashPitches, crashDurations)
 
    
-   bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR]*4
-   bassDurations = [QN, EN, EN, EN, EN, EN, EN]*4
+   bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR] * 60
+   bassDurations = [QN, EN, EN, EN, EN, EN, EN] * 60
    drum.addPhrase(bassPitches, bassDurations, 4.0)
    
-   snarePitches   = [REST, SNR] * 2 *4
-   snareDurations = [QN, QN]*2 *4
+   snarePitches   = [REST, SNR] * 2 * 60
+   snareDurations = [QN, QN]*2 * 60
    drum.addPhrase(snarePitches, snareDurations, 4.0)
    
-   hiHatPitches   = [CHH] *8 *4
-   hiHatDurations = [EN] * 8 *4
+   hiHatPitches   = [CHH] *8 * 60
+   hiHatDurations = [EN] * 8 * 60
    drum.addPhrase(hiHatPitches, hiHatDurations, 4.0)
    
    drum.play_theme()
