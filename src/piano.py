@@ -15,7 +15,7 @@ class Piano:
         self.r_hand_part = Part(PIANO, part_num[1])
 
 
-    def addPhrase(self, pitches, duration, n_repetitions, hand="r"):
+    def addPhrase(self, pitches, duration, n_repetitions=0, hand="r"):
         phrase = Phrase()
         phrase.addNoteList(pitches, duration)
         if n_repetitions > 0:

@@ -1,7 +1,9 @@
 from piano import Piano
 from electricguitar import electricGuitar
 from acousticGuitar import acousticGuitar
+from drum import Drums
 from music import *
+import time
 
 if "__main__" in __name__:
    score  = Score("Composition", 120)
@@ -9,8 +11,47 @@ if "__main__" in __name__:
    piano = Piano("Piano", 120, [0, 1])   
    electGuitar = electricGuitar("Electric guitar", 120, 2)   
    acGuitar = acousticGuitar("Acoustic guitar", 120, 3)
+   drum = Drums("Drums", 120.0, 4)
    
+   # SILENCE INTRO:
+   pitches_intro =  [SILENT]
+   duration_intro = [WN]
+   # -------------------------------------------------
+   # drum
+      #Intro
+   hiHatPitches   = [CHH, CHH]
+   hiHatDurations = [QN, QN]
+   
+   highTomPitches = [REST, 40, 40, 50, 50, 47, 47, 41]
+   highTomDurations = [SN, SN, SN, SN, SN, SN, SN, SN]
+   
+   introPitches = hiHatPitches + highTomPitches
+   introDurations = hiHatDurations + highTomDurations
+   
+   drum.addPhrase(introPitches, introDurations)
+   
+      #Base
+   crashPitches = [CC1]
+   crashDurations = [QN]
+   drum.addPhrase(crashPitches, crashDurations)
+
+   
+   bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR] * 60
+   bassDurations = [QN, EN, EN, EN, EN, EN, EN] * 60
+   drum.addPhrase(bassPitches, bassDurations, 4.0)
+   
+   snarePitches   = [REST, SNR] * 2 * 60
+   snareDurations = [QN, QN]*2 * 60
+   drum.addPhrase(snarePitches, snareDurations, 4.0)
+   
+   hiHatPitches   = [CHH] *8 * 60
+   hiHatDurations = [EN] * 8 * 60
+   drum.addPhrase(hiHatPitches, hiHatDurations, 4.0)
+   
+   drum.create_score();
+   # -------------------------------------------------
    # electGuitar
+   electGuitar.addToPhase(pitches_intro, duration_intro)
    pitches =  [SILENT, G5, G5, E5, D5, D5, DS5, DF5, C5, SILENT, D5, D5, SILENT]
    duration = [QN, DHN, WN, QN, DHN, SN, SN, DQN, DHN, HN, HN, DHN, QN]
    electGuitar.addToPhase(pitches, duration)
@@ -55,6 +96,7 @@ if "__main__" in __name__:
    duration = [QN, HN, HN, QN, QN, HN, HN, QN, QN, HN, HN, HN, HN, HN, HN]
    electGuitar.addToPhase(pitches, duration)
    electGuitar.create_score();
+   # -------------------------------------------------
    
    # acGuitar
    firstchord = [[A3,E4,A4,C5,E5]]*5
@@ -62,7 +104,10 @@ if "__main__" in __name__:
    dynamicsfirstchord = [MP] * 5
    secondchord = [[G3,B3,E4,G4]] * 5
    durationsecondchord = [QN,QN,QN,EN,EN]
-   dynamicssecondchord = [MP] * 5
+   dynamicssecondchord = [MP] * 5   
+   
+   acGuitar.addToPhase(pitches_intro, duration_intro, [MP])
+   
    for i in range(32):
       acGuitar.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
       acGuitar.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
@@ -72,19 +117,25 @@ if "__main__" in __name__:
    dynamics = [MP]*2
    acGuitar.addToPhase(lastchord,duration,dynamics)
    acGuitar.create_score()
-   
+   # -------------------------------------------------
    
    # piano
+   pitches_intro =  [SILENT]
+   duration_intro = [WN]   
+   piano.addPhraseTwoHands(pitches_intro, duration_intro, pitches_intro, duration_intro)    
+
    r_pitches = [[A3, C4, E4], [A3, C4, E4], [A3, C4, E4],     [B3, E4, G4], [B3, E4, G4], [B3, E4, G4]]
    r_durations = [DQN,            DQN,            QN,              DQN,          DQN,           QN] 
    l_pitches = [[A1, A2],        [A1, A2],     [A1, A2],         [E2, E3],    [E2, E3],      [E2, E3]]
    l_durations = [DQN,             DQN,           QN,                DQN,        DQN,           QN]    
-   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 2)    
+   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 30)    
    piano.create_score();   
 
+      
    score.addPart(piano.l_hand_part)
-   score.addPart(piano.r_hand_part)   
-   score.addPart(electGuitar.part)
+   score.addPart(piano.r_hand_part)            
    score.addPart(acGuitar.part)
+   score.addPart(electGuitar.part)
+   score.addPart(drum.part)
    
    Play.midi(score)   
