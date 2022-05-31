@@ -3,7 +3,7 @@ from music import *
 class Drums:
    bpm = 0
    score = None
-   drumsPart = Part("Drums", 0, 9)
+   part = Part("Drums", 0, 9)
    
    def __init__(self, name='Drums', bpm=125.0):
       self.name = name
@@ -19,18 +19,18 @@ class Drums:
       testPhrase.empty()
       testPart.empty()
     
-   def addToPhrase(self,pitches,duration):
-      phrase = Phrase(0.0)
+   def addPhrase(self,pitches,duration,startTime=None):
+      phrase = Phrase(startTime)
       phrase.addNoteList(pitches, duration)
-      self.drumsPart.addPhrase(phrase)
+      self.part.addPhrase(phrase)
     
    def changeTempo(self,tempo):
       self.score = Score(self.name, tempo)
     
    def create_score(self):
-      self.score.addPart(self.drumsPart)
+      self.score.addPart(self.part)
 
-   def playTheme(self):
+   def play_theme(self):
       self.create_score()
       Play.midi(self.score)
       
