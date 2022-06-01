@@ -5,11 +5,11 @@ class Drums:
    score = None
    part = None
    
-   def __init__(self, name='Drums', bpm=125.0, part_num = 0):
+   def __init__(self, name='Drums', bpm=120.0, part_num = 0):
       self.name = name
       self.bpm = bpm
       self.score = Score(name, bpm)
-      self.part = Part("Drums", part_num, 9)  # ELECTRIC GUITAR
+      self.part = Part("Drums", part_num, 9)
       
    def playNote(self,note):
       testPart = Part("Drums", 0, 9)
@@ -26,7 +26,6 @@ class Drums:
       self.part.addPhrase(phrase)
     
    def changeTempo(self,tempo):
-
       self.score = Score(self.name, tempo)
     
    def create_score(self):

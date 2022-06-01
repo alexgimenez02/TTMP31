@@ -18,34 +18,34 @@ if "__main__" in __name__:
    duration_intro = [WN]
    # -------------------------------------------------
    # drum
-      #Intro
+     #Intro
    hiHatPitches   = [CHH, CHH]
-   hiHatDurations = [QN, QN]
+   hiHatDurations = [HN, HN]
    
    highTomPitches = [REST, 40, 40, 50, 50, 47, 47, 41]
-   highTomDurations = [SN, SN, SN, SN, SN, SN, SN, SN]
+   highTomDurations = [EN, EN, EN, EN, EN, EN, EN, EN]
    
    introPitches = hiHatPitches + highTomPitches
    introDurations = hiHatDurations + highTomDurations
    
    drum.addPhrase(introPitches, introDurations)
    
-      #Base
+   #Base
    crashPitches = [CC1]
-   crashDurations = [QN]
+   crashDurations = [HN]
    drum.addPhrase(crashPitches, crashDurations)
-
+   
    
    bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR] * 60
-   bassDurations = [QN, EN, EN, EN, EN, EN, EN] * 60
+   bassDurations = [HN, QN, QN, QN, QN, QN, QN] * 60
    drum.addPhrase(bassPitches, bassDurations, 4.0)
    
    snarePitches   = [REST, SNR] * 2 * 60
-   snareDurations = [QN, QN]*2 * 60
+   snareDurations = [HN, HN]*2 * 60
    drum.addPhrase(snarePitches, snareDurations, 4.0)
    
    hiHatPitches   = [CHH] *8 * 60
-   hiHatDurations = [EN] * 8 * 60
+   hiHatDurations = [QN] * 8 * 60
    drum.addPhrase(hiHatPitches, hiHatDurations, 4.0)
    
    drum.create_score();
