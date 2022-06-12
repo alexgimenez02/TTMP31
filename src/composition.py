@@ -36,16 +36,16 @@ if "__main__" in __name__:
    drum.addPhrase(crashPitches, crashDurations)
    
    
-   bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR] * 60
-   bassDurations = [HN, QN, QN, QN, QN, QN, QN] * 60
+   bassPitches   = [BDR, REST, BDR, REST, BDR, REST, BDR] * 30
+   bassDurations = [HN, QN, QN, QN, QN, QN, QN] * 30
    drum.addPhrase(bassPitches, bassDurations, 4.0)
    
-   snarePitches   = [REST, SNR] * 2 * 60
-   snareDurations = [HN, HN]*2 * 60
+   snarePitches   = [REST, SNR] * 2 * 30
+   snareDurations = [HN, HN]*2 * 30
    drum.addPhrase(snarePitches, snareDurations, 4.0)
    
-   hiHatPitches   = [CHH] *8 * 60
-   hiHatDurations = [QN] * 8 * 60
+   hiHatPitches   = [CHH] *8 * 30
+   hiHatDurations = [QN] * 8 * 30
    drum.addPhrase(hiHatPitches, hiHatDurations, 4.0)
    
    drum.create_score();
@@ -108,7 +108,7 @@ if "__main__" in __name__:
    
    acGuitar.addToPhase(pitches_intro, duration_intro, [MP])
    
-   for i in range(32):
+   for i in range(30):
       acGuitar.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
       acGuitar.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
    
@@ -149,7 +149,7 @@ if "__main__" in __name__:
    l_pitches = 2 * l_pitches1 + l_pitches2 + l_pitches1
    l_durations = 2 * l_durations1 + l_durations2 + l_durations1
    
-   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 10)    
+   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 7)    
    piano.create_score();   
 
       
