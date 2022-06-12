@@ -124,11 +124,32 @@ if "__main__" in __name__:
    duration_intro = [WN]   
    piano.addPhraseTwoHands(pitches_intro, duration_intro, pitches_intro, duration_intro)    
 
-   r_pitches = [[A3, C4, E4], [A3, C4, E4], [A3, C4, E4],     [B3, E4, G4], [B3, E4, G4], [B3, E4, G4]]
-   r_durations = [DQN,            DQN,            QN,              DQN,          DQN,           QN] 
-   l_pitches = [[A1, A2],        [A1, A2],     [A1, A2],         [E2, E3],    [E2, E3],      [E2, E3]]
-   l_durations = [DQN,             DQN,           QN,                DQN,        DQN,           QN]    
-   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 30)    
+   r_pitches1 = [[A3, C4, E4],     [A3, C4, E4],      [A3, C4, E4],            [B3, E4, G4],     [B3, E4, G4], A3,      C4, E4]
+   r_durations1 = [DQN,            DQN,                   QN,                     DQN,                QN,     EN,       EN, EN] 
+   
+   r_pitches2 = [[A3, C4, E4],     [A3, C4, E4],        [A3, C4, E4],         [B3, E4, G4],      [B3, E4, G4],         A4,G4]
+   r_durations2 = [DQN,            DQN,                    QN,                    DQN,               DQN,              EN, EN]
+     
+   r_pitches3 = [[A3, C4, E4, A4], [A3, C4, E4, A4],        D4,DS4,              [B3, E4, G4],        [B3, E4, G4],    DS4,D4]
+   r_durations3 = [DQN,            DQN,                     EN, EN,                  DQN,                 DQN,          EN, EN]     
+   
+   r_pitches4 = [[A3, C4, E4],     [A3, C4, E4],        [A3, C4, E4],         [B3, E4, G4],      [B3, E4, G4],       [B3, E4, G4],]
+   r_durations4 = [DQN,            DQN,                    QN,                    DQN,               DQN,                QN,]
+   
+   r_pitches = r_pitches1 + r_pitches2 + r_pitches3 + r_pitches4
+   r_durations = r_durations1 + r_durations2 + r_durations3 + r_durations4
+   
+
+   l_pitches1 = [[A1, A2],                    [A1, A2],           [A1, A2],             [E2, E3],           [E2, E3],            [E2, E3]]
+   l_durations1 = [DQN,                         DQN,                 QN,                  DQN,                DQN,                  QN]    
+   
+   l_pitches2 = [ SILENT, [A1, A2],        SILENT,[A1, A2],       [A1, A2],         SILENT,[E2, E3],    SILENT,[E2, E3],       [E2, E3]]
+   l_durations2 = [EN, QN,                 EN, QN,                  QN,                 EN, QN,             EN, QN,               QN]   
+      
+   l_pitches = 2 * l_pitches1 + l_pitches2 + l_pitches1
+   l_durations = 2 * l_durations1 + l_durations2 + l_durations1
+   
+   piano.addPhraseTwoHands(l_pitches, l_durations, r_pitches, r_durations, 10)    
    piano.create_score();   
 
       
