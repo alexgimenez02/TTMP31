@@ -57,35 +57,31 @@ if "__main__" in __name__:
    electGuitar.addToPhase(pitches, duration)
    
    pitches = [A5, G5, E5, A5, E5, G5, SILENT, DS5, D5, C5, SILENT, C5, B4, A4, SILENT]
-   duration =  [DHN, QN, SN, SN, SN, DHN, EN, QN, QN, HN, EN, QN, QN, HN, QN]
+   duration =  [DHN, QN, SN, SN, SN, DHN, DEN, QN, QN, HN, EN, QN, QN, HN, QN]
    electGuitar.addToPhase(pitches, duration)
    
    pitches = [D4, DS4, E4, SILENT, A4, E4, G4, G4, SILENT, G4, A4, SILENT, D5, C5, SILENT]
-   duration = [QN, QN, DHN, QN, QN, QN, HN, DQN, EN, QN, HN, QN, HN, HN, QN]
+   duration = [QN, QN, DHN, HN, QN, QN, HN, DQN, EN, QN, HN, QN, HN, HN, HN]
    electGuitar.addToPhase(pitches, duration)
    
    pitches =  [D4, DS4, E4, SILENT, C5, D5, E5, G5, G5, SILENT, D6, C6, C6, SILENT, A5, E6, SILENT]
    duration = [QN, QN, DHN, QN, SN, SN, QN, EN, DHN, QN, DHN, QN, DQN, EN, QN, DHN, HN]
    electGuitar.addToPhase(pitches, duration)
    
-   pitches = [ES6, D6, F6, C6, DS6, BS5, GS5, F5, A5, G5, SILENT]
-   duration = [HN, QN, EN, EN, EN, EN, EN, EN, EN, EN, QN]
+   pitches = [B5, A5, A5, G5, A5, B5, A5, A5, SILENT, A5, C6, D6, SILENT, D6, C6, E6, SILENT]
+   duration = [DHN, QN, QN, QN, QN, QN, QN, HN, QN, QN, QN, HN, QN, QN, QN, DHN, QN]
    electGuitar.addToPhase(pitches, duration)
    
-   pitches = [B5, G5, B5, G5, B5, SILENT, G5, F5, SILENT, [D6, A5], [C6, G5], [D6,A5], [C6, G5], SILENT]
-   duration = [QN, EN, QN, EN, QN, EN, EN, DHN, EN, EN, EN, EN, EN, EN]
-   electGuitar.addToPhase(pitches, duration)
-
-   pitches = [SILENT, C6, AS6, GS6, SILENT, G6, F6, G6, D6, F6, SILENT, DS6, ES6, C6, DS6, AS5, BS5, GS5, AS5, C6, SILENT, SILENT]
-   duration = [EN, QN, HN, DQN, EN, QN, EN, EN, EN, DQN, QN, QN, QN, EN, HN, HN, HN, HN, HN, HN, EN, DHN]
+   pitches = [A5, B5, A5, G5, A5, B5, G5, A5, G5, E5, D5, E5, DS5, A4, SILENT]
+   duration = [QN, HN, HN, QN, QN, HN, HN, QN, QN, HN, HN, HN, HN, HN, DHN]
    electGuitar.addToPhase(pitches, duration)
    
-   pitches = [[G4, D4, F3], [G4, D4, F3], [G4, D4, F3], [A4, E4, A3], [A4, E4, A3], [A4, E4, A3], [A4, E4, A3], [B4, FS4, B3], [B4, FS4, B3], [B4, FS4, B3], [B4, FS4, B3], [C5, G4, C4], [D5, A4, D4], SILENT]
-   duration = [HN, HN, QN, QN, HN, HN, QN, QN, HN, HN, QN, WN, WN, QN]
+   pitches =  [G5, E5, D5, D5, DS5, D5, C5, SILENT, E5, D5, SILENT]
+   duration = [WN, QN, DHN, SN, SN, DQN, DHN, HN, HN, DHN, QN]
    electGuitar.addToPhase(pitches, duration)
    
-   pitches = [[G4, D4, F3], [G4, D4, F3], [G4, D4, F3], [A4, E4, A3], [A4, E4, A3], [A4, E4, A3], [A4, E4, A3], [B4, FS4, B3], [B4, FS4, B3], [B4, FS4, B3], [B4, FS4, B3], [C5, G4, C4], [C5, G4, C4], [D5, A4, D4], [D5, A4, D4], SILENT]
-   duration = [HN, HN, QN, QN, HN, HN, QN, QN, HN, HN, QN, QN, DHN, QN, DHN, QN]
+   pitches = [A5, G5, E5, A5, E5, G5, SILENT, DS5, D5, C5, SILENT, C5, B4, A4, SILENT]
+   duration =  [DHN, QN, SN, SN, SN, DHN, DEN, QN, QN, HN, EN, QN, QN, HN, QN]
    electGuitar.addToPhase(pitches, duration)
    
    pitches = [B5, A5, A5, G5, A5, B5, A5, A5, SILENT, A5, C6, D6, SILENT, D6, C6, E6, SILENT]
@@ -99,11 +95,11 @@ if "__main__" in __name__:
    # -------------------------------------------------
    
    # acGuitar
-   firstchord = [[A3,E4,A4,C5,E5]]*5
-   durationfirstchord = [QN,QN,QN,EN,EN]
+   firstchord = [[A3, E4, A4, C5, E5]]*5
+   durationfirstchord = [QN, QN, QN, EN, EN]
    dynamicsfirstchord = [MP] * 5
-   secondchord = [[G3,B3,E4,G4]] * 5
-   durationsecondchord = [QN,QN,QN,EN,EN]
+   secondchord = [[G3, B3, E4, G4]] * 5
+   durationsecondchord = [QN, QN, QN, EN, EN]
    dynamicssecondchord = [MP] * 5   
    
    acGuitar.addToPhase(pitches_intro, duration_intro, [MP])
@@ -112,10 +108,10 @@ if "__main__" in __name__:
       acGuitar.addToPhase(firstchord,durationfirstchord,dynamicsfirstchord)
       acGuitar.addToPhase(secondchord,durationsecondchord,dynamicssecondchord)
    
-   lastchord = [[AF3,EF4,AF4,CF5,EF5],REST]
+   lastchord = [[A3, E4, A4, C5, E5], REST]
    duration = [HN]*2
    dynamics = [MP]*2
-   acGuitar.addToPhase(lastchord,duration,dynamics)
+   acGuitar.addToPhase(lastchord, duration, dynamics)
    acGuitar.create_score()
    # -------------------------------------------------
    
