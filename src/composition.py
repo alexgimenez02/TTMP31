@@ -1,6 +1,7 @@
 from piano import Piano
 from electricguitar import electricGuitar
 from acousticGuitar import acousticGuitar
+from Bass import Bass
 from drum import Drums
 from music import *
 import time
@@ -12,6 +13,7 @@ if "__main__" in __name__:
    electGuitar = electricGuitar("Electric guitar", 120, 2)   
    acGuitar = acousticGuitar("Acoustic guitar", 120, 3)
    drum = Drums("Drums", 120.0, 4)
+   bass = Bass("Bass", 120)
    
    # SILENCE INTRO:
    pitches_intro =  [SILENT]
@@ -30,7 +32,7 @@ if "__main__" in __name__:
    
    drum.addPhrase(introPitches, introDurations)
    
-   #Base
+      #Base
    crashPitches = [CC1]
    crashDurations = [HN]
    drum.addPhrase(crashPitches, crashDurations)
@@ -50,6 +52,26 @@ if "__main__" in __name__:
    
    drum.create_score();
    # -------------------------------------------------
+   #Bass
+   
+   bassPitchOffset = [SILENT, SILENT]
+   bassDurationOffset = [WN,WN]  
+
+   bassPitch   =  [A2, A2, A2, G2, G2, G2, F2, F2, F2, E2, E2, E2, A2, A2, A2, G2, G2, G2, F2, F2, F2, B2, A2, C3, C3, C3, E3, D3, C3, C3, C3, G3, C3, A2, A2, A2, C3, C3, E3, G3, A2, A2, F3, D3, C3, G3, C3, G2,G2,G2,F2,F2,F2,E2,E2,E2,A2,A2,A2,G2,G2,G2,F2,F2,F2,B2,A2,C3,C3,C3, E3, D3, C3, C3, C3, G3, C3, A2, A2, A2, C3, C3,E3,G3,A3,A3,F3,D3,C3,G3,C3,C3] 
+   bassDuration =  [QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, EN, EN, QN, EN ,EN, EN, EN, QN, EN ,EN, QN, QN, QN, QN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN ,EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, EN, EN, QN, EN, EN, EN, EN, QN, EN, EN, QN, QN, QN, QN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN]
+
+   bassPitchOutro = [G2,G2,G2,F2,F2,F2,E2,E2,E2,A2,A2,A2,G2,G2,G2,F2,F2,F2,B2,A2,C3,C3,C3, E3, D3, C3, C3, C3, G3, C3, A2, A2, A2, C3, C3,E3,G3,A3,A3,F3,D3,C3,G3,C3,C3]
+   bassDurationOutro = [QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, EN, EN, QN, EN, EN, EN, EN, QN, EN, EN, QN, QN, QN, QN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN, EN, EN, QN]
+   
+   bassPitches = bassPitchOffset + 3 * bassPitch + bassPitchOutro
+   bassDurations = bassDurationOffset + 3 * bassDuration + bassDurationOutro
+   
+   print(len(bassDuration))
+   
+   bass.addToPhase(bassPitches, bassDurations)  
+   
+   bass.create_score();
+   
    # electGuitar
    electGuitar.addToPhase(pitches_intro, duration_intro)
    pitches =  [SILENT, A5, G5, E5, D5, D5, DS5, D5, C5, SILENT, E5, D5, SILENT]
@@ -158,5 +180,6 @@ if "__main__" in __name__:
    score.addPart(acGuitar.part)
    score.addPart(electGuitar.part)
    score.addPart(drum.part)
+   score.addPart(bass.part)
    
    Play.midi(score)   
