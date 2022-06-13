@@ -66,8 +66,6 @@ if "__main__" in __name__:
    bassPitches = bassPitchOffset + 3 * bassPitch + bassPitchOutro
    bassDurations = bassDurationOffset + 3 * bassDuration + bassDurationOutro
    
-   print(len(bassDuration))
-   
    bass.addToPhase(bassPitches, bassDurations)  
    
    bass.create_score();
