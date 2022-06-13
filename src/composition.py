@@ -13,7 +13,7 @@ if "__main__" in __name__:
    electGuitar = electricGuitar("Electric guitar", 120, 2)   
    acGuitar = acousticGuitar("Acoustic guitar", 120, 3)
    drum = Drums("Drums", 120.0, 4)
-   bass = Bass("Bass", 120)
+   bass = Bass("Bass", 120, 5)
    
    # SILENCE INTRO:
    pitches_intro =  [SILENT]
