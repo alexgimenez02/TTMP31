@@ -1,15 +1,16 @@
 from music import *
 
-class electricGuitar:
+class Bass:
     name = ""
     bpm = 0
     score = None
     part = None
    
-    def __init__(self, name = 'Electric Guitar', bpm = 60, part_num=0):
+    def __init__(self, name = 'Bass', bpm = 60, part_num = 0):
         self.name = name
+        self.bpm = bpm
         self.score = Score(name, bpm)
-        self.part = Part(ELECTRIC_GUITAR, part_num)  #ELECTRIC GUITAR
+        self.part = Part(ACOUSTIC_BASS, part_num) #BASS
    
     def playNote(self, note):
         '''
@@ -17,7 +18,8 @@ class electricGuitar:
         '''
         phrase = Phrase()
         phrase.addNote(note)
-        Play.midi(part.addPhrase(phrase))
+        part.addPhrase(phrase)
+        Play.midi(part)
         
 
     def addToPhase(self, pitches, duration): 
@@ -32,14 +34,11 @@ class electricGuitar:
         '''
         changes the tempo of the theme
         '''
-        pass
+        self.score = Score(self.name, tempo)
     
     def create_score(self):
         if self.part.getSize() > 0:
             self.score.addPart(self.part)
-
-    def write_mdi(self, path):
-        Write.midi(self.score, path)
         
     def playTheme(self):
         '''
@@ -47,3 +46,6 @@ class electricGuitar:
         '''
         self.create_score()
         Play.midi(self.score)
+
+    def write_mdi(self, path):
+        Write.midi(self.score, path)
