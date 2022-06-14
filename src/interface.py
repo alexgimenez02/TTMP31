@@ -14,7 +14,7 @@ auxScore = Score("CompositionToSave", 120)
 piano = Piano("Piano test", 120, [0, 1])
 electGuitar = electricGuitar("Electric guitar", 120, 2)   
 acGuitar = acousticGuitar("Acoustic guitar", 120, 3)
-drum = Drums("Drums", 120.0, 4)
+drum = Drums("Drums", 120.0, 9)
 bass = Bass("Bass", 120, 5)  
 
 def composition():
@@ -378,6 +378,9 @@ def printValue(volume):
    Play.setVolume(volume,0) 
    Play.setVolume(volume,1) 
    Play.setVolume(volume,2) 
+   Play.setVolume(volume,3) 
+   Play.setVolume(volume,9) 
+   Play.setVolume(volume,5) 
    print(volume)
    
 volume = VFader(490, 265, 510, 345, 0, 100, 50, printValue)
@@ -413,7 +416,7 @@ acGuitarSlider = Slider(HORIZONTAL, 0, 100, 50, acGuitarVolume)
 d.add(acGuitarSlider, xPos,460)
 
 def drumsVolume(newVolume):
-   Play.setVolume(newVolume,4)  
+   Play.setVolume(newVolume,9)  
 drumsLabel = Label("Drums: ",LEFT,Color.WHITE)
 drumsLabel.setFont(Font("Dialog", Font.BOLD, 16));
 d.add(drumsLabel, 20,490)
@@ -428,6 +431,14 @@ d.add(bassLabel, 25,520)
 bassSlider = Slider(HORIZONTAL, 0, 100, 50, bassVolume)
 d.add(bassSlider, xPos,520)
 
+def resetVols():
+   bassSlider.setValue(50)
+   drumsSlider.setValue(50)
+   acGuitarSlider.setValue(50)
+   elecGuitarSlider.setValue(50)
+   pianoSlider.setValue(50)
+resetVolumes = Button("Reset volumes", resetVols)
+d.add(resetVolumes, xPos, 550)   
 
 #instruments checkboxes
 xDPos = 600
@@ -454,6 +465,7 @@ cGuitarCheck.check()
 #download button
 def downloadFunc():
    print("Downloading...")
+   saveScore()
    Write.midi(auxScore, "song.mid")
 downloadBut = Button("Download song", downloadFunc)
 d.add(downloadBut, xDPos, 550)
